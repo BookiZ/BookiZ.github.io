@@ -61,6 +61,101 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-create-first-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/14/create-first-hexo/" class="article-date">
+  <time datetime="2018-02-14T03:56:55.000Z" itemprop="datePublished">2018-02-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/14/create-first-hexo/">create first-hexo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当我看到老师说windows安装hexo很容易安装不成功，我的内心是抓狂的，可是我还是想尝试一下，终于历经很多磨难，安装成功。下面来说一下我的安装步骤。</p>
+<p><strong>1.  先说一下安装前的环境配置</strong></p>
+<ul>
+<li>安装node.js</li>
+<li>安装git</li>
+<li>安装markdown(或者安装一款带有markdown插件的IDE,如webstorm)</li>
+</ul>
+<p><em>以上都可在官网下载</em><br><strong>2. 详细安装步骤</strong></p>
+<ul>
+<li>新建一个文件夹（myblog)</li>
+<li>右键该文件，选择Git Bash here （提前安装好git bash工具）</li>
+<li>运行命令 </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装成功后，运行命令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init myBlog</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装依赖包（我的系统在上一部就自动安装了，我没有运行这一部，看自己的情况哦）<br><img src="http://img.blog.csdn.net/20180214123707716?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlhb3JpdGFpNzgwMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<ul>
+<li>继续运行命令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行命令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20180214122345858?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlhb3JpdGFpNzgwMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br> 然后你就可以通过，<a href="http://localhost:4000/预览啦" target="_blank" rel="noopener">http://localhost:4000/预览啦</a><br> <img src="http://img.blog.csdn.net/20180214123824429?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlhb3JpdGFpNzgwMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<hr>
+<p> <strong>不过，这个只能本地查看，接下来我们把它部署到github上</strong></p>
+<ol>
+<li>start _config.yml，编辑网站配置<ol>
+<li>把第 6 行的 title 改成你想要的名字</li>
+<li>把第 9 行的 author 改成你的大名</li>
+<li>把最后一行的 type 改成 type: git</li>
+<li>在最后一行后面新增一行，左边与 type 平齐，加上一行 repo: 仓库地址 （请将仓库地址改为「你的用户名.github.io」对应的仓库地址，仓库地址以 git@github.com: 开头）</li>
+</ol>
+</li>
+</ol>
+<p><em>第 4 步的 repo: 后面有个空格</em></p>
+<ol>
+<li>运行命令<br><code>npm install hexo-deployer-git --save</code></li>
+<li>运行<br><code>hexo deploy</code></li>
+<li>进入「你的用户名.github.io」对应的 repo，打开 GitHub Pages 功能，如果已经打开了，就直接点击预览链接</li>
+<li>你现在应该看到了你的博客！</li>
+</ol>
+<p><img src="http://img.blog.csdn.net/20180214124312963?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlhb3JpdGFpNzgwMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<hr>
+<p>以后我们在hexo上写博客就很简单了。</p>
+<ol>
+<li>hexo new newBlogName</li>
+<li>复制显示的路径，使用 start 路径 来编辑它</li>
+<li>hexo generate</li>
+<li>hexo deploy</li>
+<li>去看你的博客，应该能看到新的博客了</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/14/create-first-hexo/" data-id="cjdmnbcx70000rsu4zmvavbhs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-third" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/02/14/third/" class="article-date">
@@ -112,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/14/third/" data-id="cjdmjigm80002g4u4ypb23njj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/14/third/" data-id="cjdmnbcxc0002rsu4ql7u7y71" class="article-share-link">Share</a>
       
       
     </footer>
@@ -173,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/14/second/" data-id="cjdmjigm60001g4u4p3i5pyzb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/14/second/" data-id="cjdmnbcxd0003rsu4mv608m25" class="article-share-link">Share</a>
       
       
     </footer>
@@ -218,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/13/hello-world/" data-id="cjdmjiglx0000g4u4jl4z880v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/13/hello-world/" data-id="cjdmnbcxa0001rsu4cop5oxqz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,6 +352,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/02/14/create-first-hexo/">create first-hexo</a>
+          </li>
         
           <li>
             <a href="/2018/02/14/third/">third</a>
